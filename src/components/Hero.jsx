@@ -7,13 +7,12 @@ export default function Hero() {
       <div className="hero-content">
         <p className="hero-eyebrow">Muraho — Welcome</p>
         <h1 className="hero-title">
-          Data, technology<br />&amp; <em>human impact</em>
+          Data, Technology<br />&amp; <em>Global Health</em>
         </h1>
         <p className="hero-description">
-          I'm Ganza Belise, originally from Rwanda and a recent Dartmouth graduate
+          I'm Ganza Belise Aloysie Isingizwe, originally from Rwanda and a recent Dartmouth graduate
           with a <em>BA in Mathematical Data Science</em> and a minor in Computer
-          Science. I enjoy working at the intersection of technology and human
-          experience. Outside of work, I like creating spaces for connection —
+          Science. I enjoy working at the intersection of technology and social impact. Outside of work, I like creating spaces for connection —
           whether by serving on boards or organizing events — to help others, and
           myself, find a home away from home.
         </p>
