@@ -49,8 +49,6 @@ export const projects = [
     impact:
       "Achieved 97% accuracy in genre prediction, demonstrating the potential for using neuroimaging data to understand music perception in the brain.",
     teamSize: "Individual (1)",
-    linkType: "code",
-    url: "#",
   },
   {
     category: "coding",
