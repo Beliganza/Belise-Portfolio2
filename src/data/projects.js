@@ -1,13 +1,14 @@
 // All project content lives here. Add a new project by appending an object.
 // category: "coding" | "data" | "research" | "uiux"  (drives the Work filter tabs)
 // linkType: "code" | "site" | "prototype" | "paper" | "poster" | "caseStudy"
-// optional: image (path under public/, URL-encode spaces as %20), approach, opportunity, impact, teamSize, url (omit for no button)
+// optional: image (thumbnail + figure in the card) or thumb (thumbnail only); paths under public/, spaces as %20, approach, opportunity, impact, teamSize, url (omit for no button)
 
 export const projects = [
   {
     category: "coding",
     title: "NestFlow",
     subtitle: "Full-Stack Web App | React, TypeScript, Node.js, Supabase",
+    thumb: "/nestflow.png",
     tags: ["React", "TypeScript", "Node.js", "Express", "Supabase (PostgreSQL)", "Claude API", "Tailwind", "Leaflet"],
     overview:
       "A full-stack housing platform that brings four listing sources, including Zillow and Airbnb, into one search, with a conversational AI agent for real-time neighborhood and listing insights. Users can find roommates through a matching algorithm that pairs them by budget and lifestyle (95% user satisfaction in testing), then save and compare homes together in shared collections.",
@@ -22,6 +23,7 @@ export const projects = [
     category: "coding",
     title: "MySQL-Based Manuscript Management System",
     subtitle: "Database | SQL, ER Diagrams, Business Logic",
+    thumb: "/Manuscript.png",
     tags: ["MySQL", "SQL (DDL/DML)", "Stored Procedures", "Triggers", "ER Modeling", "3NF Normalization"],
     overview:
       "Designed and implemented a normalized (3NF) relational database to manage manuscripts, authors, reviewers, and submissions.",
@@ -39,6 +41,7 @@ export const projects = [
     category: "coding",
     title: "fMRI Music Genre Classifier",
     subtitle: "Machine Learning | Python, Scikit-learn",
+    thumb: "/Music%20Genre.png",
     tags: ["Python", "scikit-learn", "NumPy", "pandas", "Model Selection", "Cross-validation"],
     overview:
       "Built a machine-learning pipeline to predict music genres from fMRI signals; reached ~97% accuracy on held-out data.",
@@ -54,6 +57,7 @@ export const projects = [
     category: "coding",
     title: "Six Degrees of Separation",
     subtitle: "Graph Theory | Java, BFS",
+    thumb: "/Six%20degrees.png",
     tags: ["Java", "Graph Data Structures", "BFS Algorithm", "Queues", "UI Design"],
     overview:
       "Interactive 'Kevin Bacon' style tool that finds shortest connection paths between actors using graph search.",
@@ -71,6 +75,7 @@ export const projects = [
     category: "coding",
     title: "Collaborative Graphical Editor",
     subtitle: "Java | Multithreading, Sockets",
+    thumb: "/Collaborative.png",
     tags: ["Java", "Sockets/Networking", "Multithreading", "Observer Pattern", "Serialization"],
     overview: "Real-time, multi-client drawing editor with synchronized state across users.",
     challenge:
@@ -87,6 +92,7 @@ export const projects = [
     category: "coding",
     title: "Map Pathfinder",
     subtitle: "Algorithms | Java, BFS",
+    thumb: "/Mapfinder.png",
     tags: ["Java", "Graph Algorithms", "BFS", "Dijkstra's Algorithm", "Priority Queues"],
     overview: "Computed shortest walking routes across a campus map using graph algorithms.",
     challenge: "Find optimal routes across a campus while accounting for different path types and distances.",
@@ -101,6 +107,7 @@ export const projects = [
     category: "coding",
     title: "Huffman Encoding",
     subtitle: "Data Compression | Trees, Encoding",
+    thumb: "/huffman.png",
     tags: ["Java", "Priority Queues", "Heaps", "Binary Trees", "Bit I/O"],
     overview: "End-to-end compressor/decompressor using Huffman coding.",
     challenge:
@@ -134,6 +141,7 @@ export const projects = [
     category: "research",
     title: "Benchmarking Large Language Models for Clinical Quality Assessment in Patient Portal Messaging",
     subtitle: "Independent Research | LLM-as-a-Judge, Clinical NLP",
+    thumb: "/clinical%20quality.png",
     tags: ["LLM-as-a-Judge", "Healthcare AI", "NLP", "Model Evaluation", "Data Annotation", "LangChain"],
     overview:
       "A follow-up to my ACL 2026 work that shifts the focus from generating patient replies to evaluating them: can off-the-shelf foundation models act as reliable zero-shot judges of the clinical quality of AI-generated responses?",
@@ -165,6 +173,7 @@ export const projects = [
     category: "research",
     title: "Cross-Model Universal Adversarial Perturbations in Medical Imaging",
     subtitle: "Course project, The Dark Side of AI",
+    thumb: "/federated%20learning.png",
     tags: ["Adversarial ML", "Federated Learning", "Medical Imaging", "PyTorch", "Computer Vision"],
     overview:
       "Can adversarial images crafted on one model fool other unseen models trained on different data and architectures? I tested this in a simulated federated learning setup for pneumonia detection on chest X-rays.",
@@ -181,6 +190,7 @@ export const projects = [
     category: "uiux",
     title: "Halo Team Networking Glasses",
     subtitle: "UX Research + Visual Design",
+    thumb: "/halo.png",
     tags: ["Prototyping", "UI/UX Design", "HTML", "CSS", "JavaScript", "AR Concepts"],
     overview:
       "Concept and prototype of AR eyewear that overlays real-time attendee info, name tags, and ice-breaker prompts to streamline networking.",
@@ -198,6 +208,7 @@ export const projects = [
     category: "coding",
     title: "Blogpost Management Application",
     subtitle: "Python | MongoDB | Dictionaries",
+    thumb: "/Blog.png",
     tags: ["Python", "argparse", "JSON", "Data Structures", "CLI Design"],
     overview:
       "Command-line blog system supporting posts, comments, tags, search, and deletion with an interactive command loop.",
@@ -213,6 +224,7 @@ export const projects = [
     category: "coding",
     title: "Portfolio Website",
     subtitle: "Front-End | React, Vite, Sass",
+    thumb: "/portfolio.png",
     tags: ["React", "Vite", "Sass (SCSS)", "JavaScript", "Responsive Design", "Git/GitHub"],
     overview:
       "This site: a personal portfolio built with React and Vite to showcase my projects across coding, research, UI/UX, and data analysis.",
@@ -226,6 +238,7 @@ export const projects = [
     category: "uiux",
     title: "Sound Travels",
     subtitle: "UX Research + UI Design | Figma Prototype",
+    thumb: "/sound%20travels.png",
     tags: ["UX Research", "UI Design", "Figma", "Prototyping", "Interaction Design"],
     overview:
       "“Sound travels. So do we. Explore the world through music.” An interactive music exploration platform that lets users discover instruments, cultures, and communities from around the world.",
@@ -243,6 +256,7 @@ export const projects = [
     category: "data",
     title: "Using Game Theory to Analyze the Hard-to-Get Strategy in Dating",
     subtitle: "Evolutionary Game Theory | Python, Survey Analysis",
+    thumb: "/game%20theory.png",
     tags: ["Game Theory", "Replicator Dynamics", "Python", "NumPy", "SymPy", "Matplotlib", "Survey Design"],
     overview:
       "Modeled “playing hard to get” as a signaling game in Dartmouth dating culture, asking whether deliberate ambiguity can spread and stabilize across a whole community, not just win over one person.",

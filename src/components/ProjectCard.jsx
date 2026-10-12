@@ -5,6 +5,7 @@ export default function ProjectCard({ project }) {
   const [open, setOpen] = useState(false);
   const shown = project.tags.slice(0, 3);
   const extra = project.tags.length - shown.length;
+  const thumb = project.thumb ?? project.image;
 
   return (
     <article className={`card${open ? " open" : ""}`}>
@@ -14,8 +15,8 @@ export default function ProjectCard({ project }) {
         onClick={() => setOpen((o) => !o)}
       >
         <div className="thumb">
-          {project.image
-            ? <img src={project.image} alt="" />
+          {thumb
+            ? <img src={thumb} alt="" />
             : project.title.split(" ").slice(0, 2).join(" ")}
         </div>
         <div className="card-meta">
