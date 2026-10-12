@@ -28,11 +28,7 @@ export default function Work() {
 
         <div className="cards">
           {visible.length > 0
-            ? visible.map((p, i) => (
-                <Reveal key={p.title} delay={i * 60}>
-                  <ProjectCard project={p} />
-                </Reveal>
-              ))
+            ? visible.map((p) => <ProjectCard key={p.title} project={p} />)
             : <p className="empty">Projects coming soon.</p>}
         </div>
       </div>
