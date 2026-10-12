@@ -6,6 +6,20 @@
 export const projects = [
   {
     category: "coding",
+    title: "NestFlow",
+    subtitle: "Full-Stack Web App | React, TypeScript, Node.js, Supabase",
+    tags: ["React", "TypeScript", "Node.js", "Express", "Supabase (PostgreSQL)", "Claude API", "Tailwind", "Leaflet"],
+    overview:
+      "A full-stack housing platform that brings four listing sources, including Zillow and Airbnb, into one search, with a conversational AI agent for real-time neighborhood and listing insights. Users can find roommates through a matching algorithm that pairs them by budget and lifestyle (95% user satisfaction in testing), then save and compare homes together in shared collections.",
+    challenge:
+      "Finding a short-term or furnished rental means opening four tabs and comparing listings manually across platforms, and finding compatible roommates to share it with is just as hard.",
+    approach:
+      "Built a unified listing feed that aggregates four platforms through source-specific adapters, with card, list, and map (Leaflet) views. Added natural language search with Claude Haiku so users can type what they want instead of filling out a form, and a scoring engine that ranks every listing 0 to 100 based on fit. Also built shared collections where groups can save and comment on listings, smart email alerts for new listings that match saved searches, Claude-powered roommate matching that scores compatibility and explains it, and Supabase Auth with Google OAuth. Frontend in React, TypeScript, Vite, Tailwind, and Framer Motion; backend in Node.js and Express on Supabase (PostgreSQL).",
+    linkType: "site",
+    url: "https://project-short-term-rental-aggregation.onrender.com",
+  },
+  {
+    category: "coding",
     title: "MySQL-Based Manuscript Management System",
     subtitle: "Database | SQL, ER Diagrams, Business Logic",
     tags: ["MySQL", "SQL (DDL/DML)", "Stored Procedures", "Triggers", "ER Modeling", "3NF Normalization"],
@@ -117,6 +131,21 @@ export const projects = [
     teamSize: "Seegmiller, Gatto, Greer, Isingizwe, Ray, Burdick, Preum (Dartmouth)",
     linkType: "paper",
     url: "https://aclanthology.org/2026.acl-long.1505/",
+  },
+  {
+    category: "research",
+    title: "Benchmarking Large Language Models for Clinical Quality Assessment in Patient Portal Messaging",
+    subtitle: "Independent Research | LLM-as-a-Judge, Clinical NLP",
+    tags: ["LLM-as-a-Judge", "Healthcare AI", "NLP", "Model Evaluation", "Data Annotation", "LangChain"],
+    overview:
+      "A follow-up to my ACL 2026 work that shifts the focus from generating patient replies to evaluating them: can off-the-shelf foundation models act as reliable zero-shot judges of the clinical quality of AI-generated responses?",
+    challenge:
+      "Without a reliable way to evaluate AI drafts, clinical communication risks spreading inaccurate or unsafe advice at scale, and manual audits don’t scale. Earlier work relied on a fine-tuned judge; it was unclear whether general-purpose models could do the job without task-specific training.",
+    approach:
+      "Curated 60 patient-doctor interactions from r/AskDocs (verified-doctor responses with 10+ upvotes) and generated 60 zero-shot replies with Claude Sonnet 4, GPT, and Llama (20 each). Manually annotated 243 doctor-sentence units under a strict binary clinical-equivalence standard, then benchmarked four judge models (Llama, GPT, Qwen, Claude) against this ground truth using accuracy, confusion matrices, precision/recall/F1, and a check for hallucinated matches.",
+    impact:
+      "GPT was the most accurate judge (85.6%), followed by Qwen (81.1%), Claude (71.6%, or 80.6% excluding 27 pipeline errors), and Llama (37.9%). No model reached perfect agreement. The judges differed mostly in the kinds of errors they made: Llama caught 95% of real matches but about two-thirds of its claimed matches were wrong, and it fabricated 3.5% of them, while Claude had the highest precision (0.87) but missed about half of real matches. The results suggest zero-shot models should assist, not replace, expert clinical review.",
+    teamSize: "Individual (1) · Advisors: Professor Sarah Preum, Parker Seegmiller (PhD)",
   },
   {
     category: "research",
@@ -232,7 +261,7 @@ export const projects = [
 
 export const filters = [
   { id: "coding", label: "Coding Projects", icon: "code" },
-  { id: "data", label: "Data Analysis", icon: "chart" },
   { id: "research", label: "Research", icon: "flask" },
   { id: "uiux", label: "UI/UX", icon: "layout" },
+  { id: "data", label: "Data Analysis", icon: "chart" },
 ];

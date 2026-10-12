@@ -1,8 +1,7 @@
 import Icon from "./Icon";
 
-// Swap these for your real links
-const emailUrl = "mailto:your.email@example.com";
-const linkedinUrl = "#";
+const emailUrl = "mailto:Ganza.Belise.Aloysie.Isingizwe@dartmouth.edu";
+const linkedinUrl = "https://www.linkedin.com/in/beliseganza/";
 
 export default function Contact() {
   return (
@@ -30,7 +29,7 @@ export default function Contact() {
         </div>
 
         <p className="quote">
-          "You cannot use up creativity. The more you use, the more you have." — Maya Angelou
+          "And the best news of all is that it is never too late to become the person you've always wanted to be." — Cleo Wade
         </p>
       </div>
     </section>
