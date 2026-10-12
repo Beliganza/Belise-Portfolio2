@@ -1,7 +1,7 @@
 // All project content lives here. Add a new project by appending an object.
 // category: "coding" | "data" | "research" | "uiux"  (drives the Work filter tabs)
-// linkType: "code" | "site" | "prototype" | "paper" | "poster"
-// optional: image (path under public/), approach, opportunity, impact, teamSize, url (omit for no button)
+// linkType: "code" | "site" | "prototype" | "paper" | "poster" | "caseStudy"
+// optional: image (path under public/, URL-encode spaces as %20), approach, opportunity, impact, teamSize, url (omit for no button)
 
 export const projects = [
   {
@@ -33,7 +33,7 @@ export const projects = [
       "Delivered a fully normalized database system that streamlines manuscript submission and review processes while maintaining complete data integrity.",
     teamSize: "Individual (1)",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/lab2c",
   },
   {
     category: "coding",
@@ -67,7 +67,7 @@ export const projects = [
       "Created an interactive tool that demonstrates graph theory concepts while providing engaging exploration of actor connections.",
     teamSize: "Individual (1)",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/Kevin%20Bacon%20Game",
   },
   {
     category: "coding",
@@ -83,7 +83,7 @@ export const projects = [
       "Delivered a fully functional collaborative editor demonstrating expertise in concurrent programming and network communication.",
     teamSize: "Team of 2",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/editor",
   },
   {
     category: "coding",
@@ -97,7 +97,7 @@ export const projects = [
     impact: "Created a practical navigation tool that helps users find optimal routes across campus.",
     teamSize: "Individual (1)",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/Map%20Pathfinder",
   },
   {
     category: "coding",
@@ -112,14 +112,14 @@ export const projects = [
     impact: "Achieved significant compression ratios while maintaining perfect data fidelity through lossless compression.",
     teamSize: "Team of 2",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/Huffman%20Coding",
   },
   {
     category: "research",
     title: "Evaluating LLM Alignment for Patient Message Response Drafting",
     subtitle: "ACL 2026 (Main Conference, Long Paper)",
     tags: ["NLP", "LLMs", "Healthcare AI", "Python", "Fine-tuning"],
-    image: "/research/acl-figure1.png",
+    image: "/patient%20portal%20research.jpeg",
     overview:
       "LLMs are increasingly used to draft replies to patient portal messages. We evaluated how closely these drafts match what individual clinicians would actually write, and how much editing they’d need.",
     challenge:
@@ -146,13 +146,15 @@ export const projects = [
     impact:
       "GPT was the most accurate judge (85.6%), followed by Qwen (81.1%), Claude (71.6%, or 80.6% excluding 27 pipeline errors), and Llama (37.9%). No model reached perfect agreement. The judges differed mostly in the kinds of errors they made: Llama caught 95% of real matches but about two-thirds of its claimed matches were wrong, and it fabricated 3.5% of them, while Claude had the highest precision (0.87) but missed about half of real matches. The results suggest zero-shot models should assist, not replace, expert clinical review.",
     teamSize: "Individual (1) · Advisors: Professor Sarah Preum, Parker Seegmiller (PhD)",
+    linkType: "paper",
+    url: "/Math_90%20(6).pdf",
   },
   {
     category: "research",
     title: "Vitality Monitoring in Older Kenyan Adults Using Wearables and Ecological Momentary Assessments",
     subtitle: "Poster, The Future of Dementia in Africa conference · Aga Khan University Brain and Mind Institute",
     tags: ["Global Health", "Wearables", "Aging", "Data Analysis", "Psychometrics"],
-    image: "/research/vitality-poster.jpg",
+    image: "/DEMENTIA%20RESEARCH.jpeg",
     overview:
       "Research on resilient aging and vitality. We built and validated a toolkit that tracks how vitality changes over time, using weekly phone-based check-ins and Fitbit data (steps, sleep, heart rate variability, breathing rate).",
     challenge:
@@ -166,7 +168,6 @@ export const projects = [
     title: "Cross-Model Universal Adversarial Perturbations in Medical Imaging",
     subtitle: "Course project, The Dark Side of AI",
     tags: ["Adversarial ML", "Federated Learning", "Medical Imaging", "PyTorch", "Computer Vision"],
-    image: "/research/adversarial-poster.png",
     overview:
       "Can adversarial images crafted on one model fool other unseen models trained on different data and architectures? I tested this in a simulated federated learning setup for pneumonia detection on chest X-rays.",
     challenge:
@@ -176,7 +177,7 @@ export const projects = [
     impact:
       "Attacks transferred most to models sharing the same architecture: ResNet50 accuracy dropped 54.6%, DenseNet121 35.2%, InceptionV3 17.9%. Global models were the most resistant. Architectural similarity increases systemic risk.",
     linkType: "poster",
-    url: "/research/adversarial-poster.pdf",
+    url: "/federated%20learning.pdf",
   },
   {
     category: "uiux",
@@ -208,22 +209,20 @@ export const projects = [
     impact: "Delivered a fully functional blog management system demonstrating proficiency in data structures and CLI design.",
     teamSize: "Individual (1)",
     linkType: "code",
-    url: "#",
+    url: "https://github.com/Beliganza/Ganza-CSProjects/tree/main/LAB4",
   },
   {
     category: "coding",
     title: "Portfolio Website",
-    subtitle: "HTML | CSS",
-    tags: ["HTML", "CSS", "Git/GitHub", "Vercel", "Responsive Design"],
+    subtitle: "Front-End | React, Vite, Sass",
+    tags: ["React", "Vite", "Sass (SCSS)", "JavaScript", "Responsive Design", "Git/GitHub"],
     overview:
-      "Personal website built as a learning project; iteratively refined layout, accessibility, and content structure.",
+      "This site: a personal portfolio built with React and Vite to showcase my projects across coding, research, UI/UX, and data analysis.",
     challenge: "Create a professional portfolio website that effectively showcases projects while learning web development fundamentals.",
     approach:
-      "Implemented responsive sections, project modals, and smooth navigation. Refactored CSS for consistency and theme cohesion. Deployed via GitHub/Vercel workflows as I continue to learn.",
+      "Built reusable React components for each section, with every project stored in a single data file that drives the filterable Work tabs and expandable project cards. Styled everything in Sass with shared design tokens, a light/dark theme toggle that remembers the visitor’s choice, and responsive layouts for mobile. Version-controlled with Git/GitHub.",
     impact: "Developed a functional portfolio website while gaining hands-on experience with web development best practices.",
     teamSize: "Individual (1)",
-    linkType: "code",
-    url: "#",
   },
   {
     category: "uiux",
@@ -239,8 +238,8 @@ export const projects = [
     approach:
       "Designed an interconnected app with four tabs: Home, Explore, Live Jam, and My Profile. In Explore, users pick a region (e.g. Armenia) and dive into its traditional instruments (duduk, dhol, shvi, qanun, kamancha) to learn their stories and sounds. A modular, bite-sized learning flow breaks complex history and technique into short steps with visible progress (e.g. “The duduk is 3,000 years older than the Roman Empire”). Local practitioners share their knowledge directly through recordings and video, giving an authentic first-hand view of each instrument’s cultural meaning. Live Jam lets users join live sessions that mix traditions, like “Strings of the Wind” (Japanese × Armenian, koto + duduk).",
     teamSize: "Team of 3 (Aulanni Kidd, Ganza Belise, Aron Markovics) · 3 weeks",
-    linkType: "prototype",
-    url: "#",
+    linkType: "caseStudy",
+    url: "/case%20study.pdf",
   },
   {
     category: "data",
@@ -256,6 +255,8 @@ export const projects = [
     impact:
       "Found a sender–receiver mismatch: 58.5% of respondents intentionally delay replies, but only 14.6% read a slow reply as hard-to-get, while 56.1% read it as disinterest. In the simulation, the population always converged to clear communication; the strategy only survives once p rises above about 0.77. Greek affiliation made no meaningful difference. People play hard to get because they assume it works on others, not because it works on them.",
     teamSize: "Team of 4 (Raúl, Ganza, Despoina, James)",
+    linkType: "paper",
+    url: "/math_30_final_paper%20(2).pdf",
   },
 ];
 

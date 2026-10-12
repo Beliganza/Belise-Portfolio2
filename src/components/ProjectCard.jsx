@@ -71,6 +71,7 @@ const LINK_LABELS = {
   prototype: "View Prototype",
   paper: "Read Paper",
   poster: "View Poster",
+  caseStudy: "View Case Study",
 };
 
 function Block({ label, icon, children }) {
