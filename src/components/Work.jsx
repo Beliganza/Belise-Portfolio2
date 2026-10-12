@@ -2,6 +2,7 @@ import { useState } from "react";
 import { projects, filters } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import Icon from "./Icon";
+import Reveal from "./Reveal";
 
 export default function Work() {
   const [active, setActive] = useState("coding");
@@ -12,7 +13,7 @@ export default function Work() {
       <div className="wrap">
         <h2 className="section-title">Work</h2>
 
-        <div className="filters">
+        <Reveal className="filters">
           {filters.map((f) => (
             <button
               key={f.id}
@@ -23,11 +24,15 @@ export default function Work() {
               {f.label}
             </button>
           ))}
-        </div>
+        </Reveal>
 
         <div className="cards">
           {visible.length > 0
-            ? visible.map((p) => <ProjectCard key={p.title} project={p} />)
+            ? visible.map((p, i) => (
+                <Reveal key={p.title} delay={i * 60}>
+                  <ProjectCard project={p} />
+                </Reveal>
+              ))
             : <p className="empty">Projects coming soon.</p>}
         </div>
       </div>

@@ -1,13 +1,20 @@
 // Swap `heroImage` for any photo you like (a file in /public or an image URL)
+import Letters from "./Letters";
+
 const heroImage = "headshot.jpeg";
+const LINE1 = "Data, Technology";
 
 export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-content">
         <p className="hero-eyebrow">Muraho — Welcome</p>
-        <h1 className="hero-title">
-          Data, Technology<br />&amp; <em>Global Health</em>
+        <h1 className="hero-title" aria-label="Data, Technology & Global Health">
+          <Letters text={LINE1} />
+          <br />
+          <Letters text="&" start={LINE1.length} />{" "}
+          <em><Letters text="Global Health" start={LINE1.length + 1} /></em>
+          <span className="caret" aria-hidden="true" />
         </h1>
         <p className="hero-description">
           I'm Ganza Belise Aloysie Isingizwe, originally from Rwanda and a recent Dartmouth graduate

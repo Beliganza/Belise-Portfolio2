@@ -143,6 +143,25 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; justify-content: center;
   padding: 5rem 2rem 5rem 4rem;
 }
+// Letters drop in with a little bounce, one after another
+.word { display: inline-block; white-space: nowrap; }
+.ch { display: inline-block; }
+@keyframes letter-in {
+  0%   { opacity: 0; transform: translateY(-.35em); }
+  60%  { opacity: 1; transform: translateY(.06em); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes frame-in { from { opacity: 0; transform: translateY(-14px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+.hero-title .ch { animation: letter-in .55s calc(.2s + var(--i) * 40ms) both; }
+.hero-title .caret {
+  display: inline-block; width: 3px; height: .85em; margin-left: .12em;
+  background: $accent; vertical-align: baseline; opacity: 0;
+  animation: blink .7s 1.5s 3 both;
+}
+.hero-frame { animation: frame-in .9s .7s cubic-bezier(.34, 1.4, .64, 1) both; }
+
 .hero-eyebrow {
   font-size: .75rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
   color: $accent; margin-bottom: 1.5rem;
@@ -206,6 +225,16 @@ a { color: inherit; text-decoration: none; }
 .work { background: $bg-subtle; }
 .resume { background: $bg; text-align: center; }
 .contact { background: $bg-subtle; text-align: center; }
+
+// ---- Scroll reveal (see Reveal.jsx) ----
+.reveal {
+  opacity: 0; transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1);
+  &.reveal-up { transform: translateY(18px); }
+  &.reveal-left { transform: translateX(-24px); }
+  &.reveal-right { transform: translateX(24px); }
+  &.reveal-scale { transform: scale(.94) translateY(24px); }
+  &.in { opacity: 1; transform: none; }
+}
 
 // ---- Filters ----
 .filters { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
@@ -373,5 +402,6 @@ a { color: inherit; text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 :focus-visible { outline: 2px solid $accent; outline-offset: 3px; border-radius: 2px; }
