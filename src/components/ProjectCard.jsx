@@ -13,7 +13,11 @@ export default function ProjectCard({ project }) {
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >
-        <div className="thumb">{project.title.split(" ").slice(0, 2).join(" ")}</div>
+        <div className="thumb">
+          {project.image
+            ? <img src={project.image} alt="" />
+            : project.title.split(" ").slice(0, 2).join(" ")}
+        </div>
         <div className="card-meta">
           <h3>{project.title}</h3>
           <p className="card-cat">{project.subtitle}</p>
@@ -31,25 +35,43 @@ export default function ProjectCard({ project }) {
             {project.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
           </div>
 
+          {project.image && (
+            <a className="card-figure" href={project.image} target="_blank" rel="noreferrer">
+              <img src={project.image} alt={project.title} loading="lazy" />
+            </a>
+          )}
+
           <Block label="Overview">{project.overview}</Block>
           <Block label="Challenge" icon="target">{project.challenge}</Block>
-          <Block label="Approach" icon="bolt">{project.approach}</Block>
-          <Block label="Impact" icon="trend">{project.impact}</Block>
+          {project.opportunity && <Block label="Opportunity" icon="bulb">{project.opportunity}</Block>}
+          {project.approach && <Block label="Approach" icon="bolt">{project.approach}</Block>}
+          {project.impact && <Block label="Impact" icon="trend">{project.impact}</Block>}
 
-          <div className="team">
-            <div className="blk-label muted">Team Size</div>
-            <p>{project.teamSize}</p>
-          </div>
+          {project.teamSize && (
+            <div className="team">
+              <div className="blk-label muted">Team Size</div>
+              <p>{project.teamSize}</p>
+            </div>
+          )}
 
-          <a className="btn-code" href={project.url} target="_blank" rel="noreferrer">
-            <Icon name={project.linkType === "site" ? "external" : "github"} />
-            {project.linkType === "site" ? "Visit Website" : "View Code"}
-          </a>
+          {project.url && (
+            <a className="btn-code" href={project.url} target="_blank" rel="noreferrer">
+              <Icon name={project.linkType === "code" ? "github" : "external"} />
+              {LINK_LABELS[project.linkType] ?? "View Code"}
+            </a>
+          )}
         </div>
       </div>
     </article>
   );
 }
+
+const LINK_LABELS = {
+  site: "Visit Website",
+  prototype: "View Prototype",
+  paper: "Read Paper",
+  poster: "View Poster",
+};
 
 function Block({ label, icon, children }) {
   return (

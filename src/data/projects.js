@@ -1,6 +1,7 @@
 // All project content lives here. Add a new project by appending an object.
 // category: "coding" | "data" | "research" | "uiux"  (drives the Work filter tabs)
-// linkType: "code" | "site"
+// linkType: "code" | "site" | "prototype" | "paper" | "poster"
+// optional: image (path under public/), approach, opportunity, impact, teamSize, url (omit for no button)
 
 export const projects = [
   {
@@ -21,7 +22,7 @@ export const projects = [
     url: "#",
   },
   {
-    category: "data",
+    category: "coding",
     title: "fMRI Music Genre Classifier",
     subtitle: "Machine Learning | Python, Scikit-learn",
     tags: ["Python", "scikit-learn", "NumPy", "pandas", "Model Selection", "Cross-validation"],
@@ -101,6 +102,55 @@ export const projects = [
   },
   {
     category: "research",
+    title: "Evaluating LLM Alignment for Patient Message Response Drafting",
+    subtitle: "ACL 2026 (Main Conference, Long Paper)",
+    tags: ["NLP", "LLMs", "Healthcare AI", "Python", "Fine-tuning"],
+    image: "/research/acl-figure1.png",
+    overview:
+      "LLMs are increasingly used to draft replies to patient portal messages. We evaluated how closely these drafts match what individual clinicians would actually write, and how much editing they’d need.",
+    challenge:
+      "It’s unclear whether AI drafts actually save clinicians time, or just create more editing work.",
+    approach:
+      "Cleaned 146,000 patient-doctor messages and partnered with clinicians to annotate what defines a strong clinical response. Fine-tuned 5 AI models in Python to draft patient replies and evaluated their clinical accuracy against physician responses.",
+    impact:
+      "Co-authored a paper accepted to ACL 2026. It found that LLMs handle some parts of a response well but struggle with others, especially asking patients follow-up questions, and that theme-driven adaptation improves alignment.",
+    teamSize: "Seegmiller, Gatto, Greer, Isingizwe, Ray, Burdick, Preum (Dartmouth)",
+    linkType: "paper",
+    url: "https://aclanthology.org/2026.acl-long.1505/",
+  },
+  {
+    category: "research",
+    title: "Vitality Monitoring in Older Kenyan Adults Using Wearables and Ecological Momentary Assessments",
+    subtitle: "Poster, The Future of Dementia in Africa conference · Aga Khan University Brain and Mind Institute",
+    tags: ["Global Health", "Wearables", "Aging", "Data Analysis", "Psychometrics"],
+    image: "/research/vitality-poster.jpg",
+    overview:
+      "Research on resilient aging and vitality. We built and validated a toolkit that tracks how vitality changes over time, using weekly phone-based check-ins and Fitbit data (steps, sleep, heart rate variability, breathing rate).",
+    challenge:
+      "Vitality is essential to healthy aging but hard to define and measure, and static, infrequent measurements miss its day-to-day fluctuations.",
+    impact:
+      "The 30-person pilot showed 85% average weekly adherence, and the Vitality Index proved internally consistent (Cronbach’s α = 0.80) and reliable (r = 0.71). The toolkit is now being scaled to 300 participants.",
+    teamSize: "Aga Khan University, Dartmouth, Wake Forest, and University College London collaborators",
+  },
+  {
+    category: "research",
+    title: "Cross-Model Universal Adversarial Perturbations in Medical Imaging",
+    subtitle: "Course project, The Dark Side of AI",
+    tags: ["Adversarial ML", "Federated Learning", "Medical Imaging", "PyTorch", "Computer Vision"],
+    image: "/research/adversarial-poster.png",
+    overview:
+      "Can adversarial images crafted on one model fool other unseen models trained on different data and architectures? I tested this in a simulated federated learning setup for pneumonia detection on chest X-rays.",
+    challenge:
+      "Federated learning requires shared model architectures across sites, which may make every site vulnerable to the same attack.",
+    approach:
+      "Simulated 4 hospital sites using the NIH Chest X-ray and RSNA Pneumonia datasets. Trained 15 models (ResNet50, DenseNet121, InceptionV3; 12 local plus 3 global via federated averaging). Crafted FGSM attacks on one site’s ResNet50 and tested how far they transferred.",
+    impact:
+      "Attacks transferred most to models sharing the same architecture: ResNet50 accuracy dropped 54.6%, DenseNet121 35.2%, InceptionV3 17.9%. Global models were the most resistant. Architectural similarity increases systemic risk.",
+    linkType: "poster",
+    url: "/research/adversarial-poster.pdf",
+  },
+  {
+    category: "uiux",
     title: "Halo Team Networking Glasses",
     subtitle: "UX Research + Visual Design",
     tags: ["Prototyping", "UI/UX Design", "HTML", "CSS", "JavaScript", "AR Concepts"],
@@ -114,7 +164,7 @@ export const projects = [
       "Created a compelling prototype demonstrating the potential of AR technology to improve professional networking experiences.",
     teamSize: "Team of 4",
     linkType: "site",
-    url: "#",
+    url: "https://hcinetworking.onrender.com/",
   },
   {
     category: "coding",
@@ -145,6 +195,38 @@ export const projects = [
     teamSize: "Individual (1)",
     linkType: "code",
     url: "#",
+  },
+  {
+    category: "uiux",
+    title: "Sound Travels",
+    subtitle: "UX Research + UI Design | Figma Prototype",
+    tags: ["UX Research", "UI Design", "Figma", "Prototyping", "Interaction Design"],
+    overview:
+      "“Sound travels. So do we. Explore the world through music.” An interactive music exploration platform that lets users discover instruments, cultures, and communities from around the world.",
+    challenge:
+      "Most music apps focus almost entirely on Western instruments like piano or guitar. Traditional non-Western instruments are often passed down orally, so they get overlooked and their techniques risk being lost. 3.6 million students have no access to diverse or non-Western music programs, and only 25% finish traditional, non-interactive music courses.",
+    opportunity:
+      "How might we design a platform that transforms how people discover, learn, and value music from cultures other than their own?",
+    approach:
+      "Designed an interconnected app with four tabs: Home, Explore, Live Jam, and My Profile. In Explore, users pick a region (e.g. Armenia) and dive into its traditional instruments (duduk, dhol, shvi, qanun, kamancha) to learn their stories and sounds. A modular, bite-sized learning flow breaks complex history and technique into short steps with visible progress (e.g. “The duduk is 3,000 years older than the Roman Empire”). Local practitioners share their knowledge directly through recordings and video, giving an authentic first-hand view of each instrument’s cultural meaning. Live Jam lets users join live sessions that mix traditions, like “Strings of the Wind” (Japanese × Armenian, koto + duduk).",
+    teamSize: "Team of 3 (Aulanni Kidd, Ganza Belise, Aron Markovics) · 3 weeks",
+    linkType: "prototype",
+    url: "#",
+  },
+  {
+    category: "data",
+    title: "Using Game Theory to Analyze the Hard-to-Get Strategy in Dating",
+    subtitle: "Evolutionary Game Theory | Python, Survey Analysis",
+    tags: ["Game Theory", "Replicator Dynamics", "Python", "NumPy", "SymPy", "Matplotlib", "Survey Design"],
+    overview:
+      "Modeled “playing hard to get” as a signaling game in Dartmouth dating culture, asking whether deliberate ambiguity can spread and stabilize across a whole community, not just win over one person.",
+    challenge:
+      "Prior research shows playing hard to get can make one person more appealing, but not whether it survives when many people use it, or whether Greek and non-Greek social spaces reward it differently.",
+    approach:
+      "Built a payoff matrix for two strategies, Signaling Interest and Signaling Distance, driven by how often the signal is read correctly (p), the emotional cost of uncertainty (c), and the reputational gain from seeming selective (r). Surveyed 41 Dartmouth undergraduates with questions mapped to each parameter, then simulated replicator dynamics in Python (NumPy, SymPy, Matplotlib) with the survey estimates (p ≈ 0.15, c ≈ 0.7, r ≈ 0.5) and swept p to find the survival threshold.",
+    impact:
+      "Found a sender–receiver mismatch: 58.5% of respondents intentionally delay replies, but only 14.6% read a slow reply as hard-to-get, while 56.1% read it as disinterest. In the simulation, the population always converged to clear communication; the strategy only survives once p rises above about 0.77. Greek affiliation made no meaningful difference. People play hard to get because they assume it works on others, not because it works on them.",
+    teamSize: "Team of 4 (Raúl, Ganza, Despoina, James)",
   },
 ];
 
