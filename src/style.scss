@@ -286,6 +286,24 @@ a { color: inherit; text-decoration: none; }
   transition: .2s; box-shadow: 0 8px 22px rgba(196,130,74,.25);
   &:hover { background: $accent-dark; transform: translateY(-1px); }
 }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 11px;
+  background: $card; color: $text; font-weight: 500; font-size: 1rem; letter-spacing: .04em;
+  padding: 16px 34px; border-radius: 2px; border: 1px solid $line; cursor: pointer; transition: .2s;
+  svg { color: $accent; }
+  &:hover { border-color: $accent; color: $accent; transform: translateY(-1px); }
+}
+.resume-preview {
+  max-width: 860px; margin: 0 auto 40px; aspect-ratio: 8.5 / 11;
+  background: $card; border: 1px solid $line; border-radius: 6px;
+  box-shadow: $shadow-hover; overflow: hidden;
+  object { display: block; width: 100%; height: 100%; border: 0; }
+}
+.resume-fallback {
+  padding: 48px 24px; color: $muted;
+  a { color: $accent; text-decoration: underline; }
+}
+.resume-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 // ---- About ----
 .about-grid {
@@ -350,6 +368,7 @@ a { color: inherit; text-decoration: none; }
   .thumb { width: 64px; height: 64px; flex-basis: 64px; }
   .card-meta { flex-basis: calc(100% - 110px); }
   .section { padding: 64px 0; }
+  .resume-preview { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
